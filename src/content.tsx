@@ -1,6 +1,6 @@
 import cssText from "data-text:~style.css"
 import type { PlasmoCSConfig ,  PlasmoGetOverlayAnchor , PlasmoGetInlineAnchor, PlasmoCSUIAnchor } from "plasmo"
-import { MagicButton } from "~features/MagicButon/MagicButton"
+import App from "~features/App/App"
 
 export const config: PlasmoCSConfig = {
   matches: ["https://www.linkedin.com/*"]
@@ -20,7 +20,7 @@ const PlasmoOverlay = () => {
 
   return (
     <div className={`z-50`}>
-      <MagicButton />
+      <App />
     </div>
   )
 }
