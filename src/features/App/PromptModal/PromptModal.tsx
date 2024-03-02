@@ -81,10 +81,14 @@ export function PromptModal({ setShowModal }) {
 
             <button
               onClick={handleGenerateResponse}
-              className="flex  items-center bg-[#3B82F6] w-[100px] rounded-lg text-lg py-2 px-4 gap-2">
-              <img className="" src={ArrowIcon} alt="arrow" />
+              className="flex  items-center bg-[#3B82F6]  rounded-lg text-lg py-2 px-4 gap-2">
+              <img
+                className=""
+                src={newGeneratedResponse ? RegenIcon : ArrowIcon}
+                alt="arrow"
+              />
               <span className="text-white text-2xl font-semibold">
-                Generate
+                {newGeneratedResponse ? "Regenerate" : "Generate"}
               </span>
             </button>
           </div>
