@@ -11,6 +11,9 @@ export function PromptModal({ setShowModal }) {
   const [promptTextInput, setPromptTextInput] = useState()
   const textareaRef = useRef(null)
   useTextareaAutoGrow(textareaRef, promptTextInput)
+  const inputElement = document.querySelector(".msg-form__contenteditable")
+  const toInsertTag = inputElement.querySelector("p")
+
   useEffect(() => {
     setMessages([...messages, newGeneratedResponse])
   }, [newGeneratedResponse])
@@ -34,7 +37,9 @@ export function PromptModal({ setShowModal }) {
     setPromptTextInput("")
     response()
   }
-
+  function handleinsertText() {
+    toInsertTag.innerText = newGeneratedResponse?.content
+  }
   return (
     <div className="">
       <div
@@ -64,7 +69,9 @@ export function PromptModal({ setShowModal }) {
         <div className="flex justify-end">
           <div className="flex justify-center  gap-2 ">
             {newGeneratedResponse && (
-              <button className="flex  items-center border-[#666D80] border-2 rounded-lg py-2 px-4 gap-2">
+              <button
+                onClick={handleinsertText}
+                className="flex  items-center border-[#666D80] border-2 rounded-lg py-2 px-4 gap-2">
                 <img src={InsertIcon} alt="insert icon" />
                 <span className="text-[#666D80] text-2xl font-semibold">
                   Insert
