@@ -1,6 +1,6 @@
 import cssText from "data-text:~style.css"
 import type { PlasmoCSConfig ,  PlasmoGetOverlayAnchor , PlasmoGetInlineAnchor, PlasmoCSUIAnchor } from "plasmo"
-import { MagicButton } from "~features/MagicButton"
+import { MagicButton } from "~features/MagicButon/MagicButton"
 
 export const config: PlasmoCSConfig = {
   matches: ["https://www.linkedin.com/*"]
