@@ -27,7 +27,7 @@ Linkedin-AI-reply is a Chrome extension designed to enhance your LinkedIn experi
 - 
 ## Demo Video
 
-Watch the demo video to see Linkedin-AI-reply in action: [Demo Video]([https://example.com/demo-video](https://www.loom.com/share/ce84e2e7e85641938317485cfb2848f5?sid=bb2b4f3b-7d01-4013-8772-36e44ea44d0a))
+Watch the demo video to see Linkedin-AI-reply in action: [Demo Video](https://example.com/demo-video](https://www.loom.com/share/ce84e2e7e85641938317485cfb2848f5?sid=bb2b4f3b-7d01-4013-8772-36e44ea44d0a)
 
 ## License
 
