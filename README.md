@@ -1,35 +1,35 @@
-# ChatGPT Writer Take-Home Coding Assignment
 
-This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with command: `pnpm create plasmo --with-tailwindcss`.
+# Linkedin-AI-reply
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Linkedin-AI-reply is a Chrome extension designed to enhance your LinkedIn experience by providing AI-generated responses for messages , helping you save time and maintain engagement with your network.
 
-```bash
-pnpm dev
-# or
-npm run dev
-```
+## Features
 
-See how to load the extension: https://docs.plasmo.com/framework/workflows/dev#loading-the-extension
+- **AI-Powered Responses:** Utilizes cutting-edge natural language processing (NLP) algorithms to generate contextually appropriate replies to messages on LinkedIn.
+- **Time-Saving:** generate AI responses, reducing the time spent on crafting replies to incoming messages.
+- **Customization:** Allows users to customize and fine-tune response to better fit their personal style and tone.
+- **Privacy-Focused:** All processing is done locally on your device, ensuring the privacy and security of your messages and interactions.
 
-For further guidance, [visit our Documentation](https://docs.plasmo.com/).
+## Installation
 
-## Where to edit?
+1. Download the extension from the Chrome Web Store.
+2. Log in to your LinkedIn account.
+3. Click on the extension icon in your linkedin message input to activate it.
+4. Start receiving AI-generated response for your messages .
 
-- The main code is located in src/content.tsx. By default, when you run the extension, it displays a static count button on the LinkedIn website. You need to replace it with your own code.
+## Usage
 
-![count btn on linkedin](count_btn_on_linkedin.png)
+- When you want to generatea message, the extension will generate the text for you .
+- Press insert button to inject the generated text intot the chat input or customize it as needed before sending.
+- Enjoy more efficient communication on LinkedIn while maintaining authenticity.
+- 
+## Demo Video
 
-## Making production build
+Watch the demo video to see Linkedin-AI-reply in action: [Demo Video]([https://example.com/demo-video](https://www.loom.com/share/ce84e2e7e85641938317485cfb2848f5?sid=bb2b4f3b-7d01-4013-8772-36e44ea44d0a))
 
-Run the following:
+## License
 
-```bash
-pnpm build
-# or
-npm run build
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-This should create a production bundle for your extension, ready to be zipped and published to the stores.
