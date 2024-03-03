@@ -4,6 +4,8 @@ import RegenIcon from "data-base64:~assets/regenerate.svg"
 import React, { useEffect, useRef, useState } from "react"
 
 import { postPromptApi } from "./api/postPrompt"
+import Button from "./components/Button"
+import ChatBox from "./components/ChatBox"
 import useTextareaAutoGrow from "./hooks/useTextareaAutoGrow"
 
 export function PromptModal({ setShowModal }) {
@@ -24,9 +26,11 @@ export function PromptModal({ setShowModal }) {
       sender: "client",
       content: promptTextInput
     }
-    setMessages([...messages, newPrompt])
-    setPromptTextInput("")
-    postPromptApi(setNewGeneratedResponse)
+    if (promptTextInput) {
+      setMessages([...messages, newPrompt])
+      setPromptTextInput("")
+      postPromptApi(setNewGeneratedResponse)
+    }
   }
   function handleinsertText() {
     toInsertTag.innerText = newGeneratedResponse?.content
@@ -38,20 +42,9 @@ export function PromptModal({ setShowModal }) {
         onClick={() => setShowModal(false)}
         className="fixed top-0 bottom-0 right-0 left-0  bg-black/50"></div>
       <div className=" fixed flex flex-col gap-4 -translate-y-[200px]  w-[409px]  bg-[#F9FAFB]  rounded-2xl p-[10px]">
-        <div className="chat_box flex grow flex-col gap-2 w-full ">
-          {messages?.map((msg) => (
-            <div
-              className={`flex flex-wrap w-full text-[#666D80] ${msg?.sender === "client" ? " justify-end" : "justify-start"}`}>
-              <p
-                className={`${msg?.sender === "client" ? "text-left bg-[#DFE1E7] p-2 break-words" : "text-left bg-[#DBEAFE] p-2 "} text-wrap text-xl max-w-[30rem] font-semibold rounded-xl`}>
-                {msg?.content}
-              </p>
-            </div>
-          ))}
-        </div>
-
+        <ChatBox messages={messages} />
         <textarea
-          onChange={(e) => setPromptTextInput(e.target.value)}
+          onChange={(e) => setPromptTextInput(e.target.value.trim())}
           rows={1}
           value={promptTextInput}
           ref={textareaRef}
@@ -61,19 +54,15 @@ export function PromptModal({ setShowModal }) {
         <div className="flex justify-end">
           <div className="flex justify-center  gap-2 ">
             {newGeneratedResponse && (
-              <button
-                onClick={handleinsertText}
-                className="flex  items-center border-[#666D80] border-2 rounded-lg py-2 px-4 gap-2">
+              <Button handler={handleinsertText} type="outlined">
                 <img src={InsertIcon} alt="insert icon" />
                 <span className="text-[#666D80] text-2xl font-semibold">
                   Insert
                 </span>
-              </button>
+              </Button>
             )}
 
-            <button
-              onClick={handleGenerateResponse}
-              className="flex  items-center bg-[#3B82F6]  rounded-lg text-lg py-2 px-4 gap-2">
+            <Button handler={handleGenerateResponse} type="solid">
               <img
                 className=""
                 src={newGeneratedResponse ? RegenIcon : ArrowIcon}
@@ -82,7 +71,7 @@ export function PromptModal({ setShowModal }) {
               <span className="text-white text-2xl font-semibold">
                 {newGeneratedResponse ? "Regenerate" : "Generate"}
               </span>
-            </button>
+            </Button>
           </div>
         </div>
       </div>
