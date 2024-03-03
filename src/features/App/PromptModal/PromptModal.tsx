@@ -43,14 +43,14 @@ export function PromptModal({ setShowModal }) {
       <div
         onClick={() => setShowModal(false)}
         className="fixed top-0 bottom-0 right-0 left-0  bg-black/50"></div>
-      <div className=" fixed  bottom-[300px] flex flex-col gap-4  w-[409px]  bg-[#F9FAFB]  rounded-2xl p-[10px]">
+      <div className=" fixed  bottom-[300px] flex flex-col gap-4 w-[409px] bg-offWhite  rounded-2xl p-[10px]">
         <ChatBox messages={messages} />
         <textarea
           onChange={(e) => setPromptTextInput(e.target.value)}
           rows={1}
           value={promptTextInput}
           ref={textareaRef}
-          className="bg-white border-[0.5px] text-xl font-normal text-[#666D80] p-2 border-[#666D80] overflow-hidden outline-none w-full  resize-none   rounded-[6px]"
+          className="bg-white border-[0.5px] text-xl font-normal text-ash-grey p-2 border-ash-grey overflow-hidden outline-none w-full  resize-none   rounded-[6px]"
           placeholder="Your prompt"
         />
         <div className=" flex justify-end">
@@ -58,7 +58,7 @@ export function PromptModal({ setShowModal }) {
             {newGeneratedResponse && (
               <Button handler={handleinsertText} type="outlined">
                 <img src={InsertIcon} alt="insert icon" />
-                <span className="text-[#666D80] text-2xl font-semibold">
+                <span className="text-ash-grey text-2xl font-semibold">
                   Insert
                 </span>
               </Button>
