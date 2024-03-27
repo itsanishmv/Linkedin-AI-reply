@@ -6,7 +6,7 @@ const PORT = 8000
 const corsConfig = {
     origin :["https://linkedin.com"]
 }
-app.use(cors(corsConfig))
+app.use(cors())
 app.use(express.json());
 app.use("/chat", Chat );
 

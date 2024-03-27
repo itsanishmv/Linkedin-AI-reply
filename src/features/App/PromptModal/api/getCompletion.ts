@@ -11,5 +11,5 @@ export async function getCompletionApi(prompt : any) {
     const response = await axios.post("https://linkedin-ai-reply.onrender.com/chat", {
       prompt : prompt
   })
-  console.log(response.data)
+  console.log(response.data.response)
   }
