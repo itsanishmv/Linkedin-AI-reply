@@ -1,9 +1,15 @@
 
-GET http://localhost:8000/chat/1233
+POST http://localhost:8000/chat
+content-type: application/json
+
+{
+    "prompt" : "name 2 famous indie hackers"
+}
+
 ###
 POST https://linkedin-ai-reply.onrender.com/chat
 content-type: application/json
 
 {
-    "prompt" : "name 3 famous indie hackers"
+    "prompt" : "name 2 famous indie hackers"
 }
