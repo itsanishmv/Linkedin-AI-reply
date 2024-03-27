@@ -4,9 +4,9 @@ import cors from "cors"
 const app = express()
 const PORT = 8000
 const corsConfig = {
-    origin :["https://linkedin.com"]
+    origin :"https://www.linkedin.com"
 }
-app.use(cors())
+app.use(cors(corsConfig))
 app.use(express.json());
 app.use("/chat", Chat );
 
