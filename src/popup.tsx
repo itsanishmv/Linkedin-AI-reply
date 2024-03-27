@@ -1,11 +1,9 @@
-
-
 import "~style.css"
 
 function IndexPopup() {
   return (
-    <div className="plasmo-flex plasmo-items-center plasmo-justify-center plasmo-h-16 plasmo-w-40">
-      LINKEDIN AI responder
+    <div className=" rounded-lg rounded-lg p-2 mt-10">
+      click on the icon in your input
     </div>
   )
 }
