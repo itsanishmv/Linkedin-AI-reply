@@ -3,7 +3,7 @@ import InsertIcon from "data-base64:~assets/insert.svg"
 import RegenIcon from "data-base64:~assets/regenerate.svg"
 import React, { useEffect, useRef, useState } from "react"
 
-import { postPromptApi } from "./api/postPrompt"
+import { getCompletionApi } from "./api/getCompletion"
 import Button from "./components/Button"
 import ChatBox from "./components/ChatBox"
 import useTextareaAutoGrow from "./hooks/useTextareaAutoGrow"
@@ -28,10 +28,12 @@ export function PromptModal({ setShowModal }) {
       sender: "client",
       content: promptTextInput.trim()
     }
+    console.log(newPrompt)
+    getCompletionApi(newPrompt.content)
     if (promptTextInput) {
       setMessages([...messages, newPrompt])
       setPromptTextInput("")
-      postPromptApi(setNewGeneratedResponse)
+      
     }
   }
   function handleinsertText() {
